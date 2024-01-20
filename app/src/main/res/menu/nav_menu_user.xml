@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <item tools:ignore="MenuTitle">
+        <menu>
+            <item android:id="@+id/bells" android:title="Уведомления" android:icon="@drawable/message"/>
+        </menu>
+    </item>
+
+    <item tools:ignore="MenuTitle">
+        <menu>
+            <item android:id="@+id/setting" android:title="Настройки" android:icon="@drawable/setting"/>
+        </menu>
+    </item>
+
+    <group>
+        <item android:id="@+id/sdfsdf" android:title="sdfsd"/>
+    </group>
+
+    <group android:menuCategory="container" android:checkableBehavior="single">
+        <item android:id="@+id/d" android:title="sdsdsdfsd"/>
+    </group>
+
+
+</menu>
+
+<!--платежи-->
+
+<!--закончить сессию-->
+
+<!--справка/отзыв-->
