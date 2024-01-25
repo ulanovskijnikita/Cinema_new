@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MyRetrofit {
     fun getRetrofit():Retrofit = Retrofit.Builder()
-        .baseUrl("http://mskko2021.mad.hakta.pro/api/")
+        .baseUrl("https://www.simplifiedcoding.net/demos/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }

@@ -12,4 +12,7 @@ object Const {
     const val mail = "mail"
     const val pass = "pass"
     const val state = "state"
+
+//    Intent
+    const val news = "number"
 }

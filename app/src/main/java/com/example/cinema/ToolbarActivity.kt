@@ -3,7 +3,6 @@ package com.example.cinema
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
 import android.content.Intent
 import android.net.Uri
 import android.view.Menu
@@ -12,13 +11,7 @@ import android.widget.Toast
 import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cinema.databinding.ActivityToolbarBinding
-import com.example.cinema.retrofit.`interface`.RetrofitServieces
-import com.example.cinema.retrofit.model.Data
-import com.example.cinema.retrofit.MyRetrofit
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
-import retrofit2.Call
-import retrofit2.Response
+
 
 class ToolbarActivity : AppCompatActivity() {
     private lateinit var binding: ActivityToolbarBinding

@@ -28,7 +28,7 @@ class MainContentActivity : AppCompatActivity() {
             bottomNavigationView.apply {
                 setOnItemSelectedListener {
                     when (it.itemId) {
-                        R.id.home -> Toast.makeText(this@MainContentActivity, "Экран в разработке", Toast.LENGTH_SHORT).show()
+                        R.id.home -> supportFragmentManager.beginTransaction().replace(R.id.frameLayout, NewsFragment()).commit()
                         R.id.heart -> supportFragmentManager.beginTransaction().replace(R.id.frameLayout, FilmsFragment()).commit()
                         R.id.gear -> supportFragmentManager.beginTransaction().replace(R.id.frameLayout, UserFragment()).commit()
                     }

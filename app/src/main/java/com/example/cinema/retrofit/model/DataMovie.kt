@@ -1,4 +1,12 @@
 package com.example.cinema.retrofit.model
 
-data class Data(val success:Boolean, val data: List<DataMovie>)
-data class DataMovie(val id:String, val title:String, val image:String)
+//news
+data class DataMovie(
+    val name: String,
+    val realname: String,
+    val team: String,
+    val firstappearance: String,
+    val createdby: String,
+    val publisher: String,
+    val imageurl: String,
+    val bio: String)
