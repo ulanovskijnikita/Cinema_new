@@ -10,10 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 //  Для актёров
 class PersonAdapter(val con: Context, val list: List<person_data>): RecyclerView.Adapter<PersonAdapter.Link>() {
-
-//// Для Retrofit'а
-//class PersonAdapter(val con: Context, val list: List<DataMovie>): RecyclerView.Adapter<PersonAdapter.Link>() {
-
     class Link(itemView: View): RecyclerView.ViewHolder(itemView) {
         val person_img: ImageView =itemView.findViewById(R.id.recycler_person_image)
         val person_name: TextView =itemView.findViewById(R.id.recycler_person_name)
@@ -30,11 +26,6 @@ class PersonAdapter(val con: Context, val list: List<person_data>): RecyclerView
         holder.person_img.setImageResource(list[position].img_person)
         holder.person_name.setText(list[position].name_person)
         holder.person_txt.setText(list[position].text_person)
-
-//        // Для Retrofit'а
-//        holder.person_name.setText(list[position].id)
-//        holder.person_txt.setText(list[position].title)
-//        Glide.with(con).load(list[position].image).into(holder.person_img)
     }
 
     override fun getItemCount(): Int {

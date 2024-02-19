@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.cinema.databinding.FragmentNewsBinding
 import com.example.cinema.retrofit.MyRetrofit
-import com.example.cinema.retrofit.`interface`.RetrofitServieces
+import com.example.cinema.retrofit.`interface`.RetrofitFunctions
 import com.example.cinema.retrofit.model.DataMovie
 import retrofit2.Call
 import retrofit2.Response
@@ -52,18 +52,18 @@ class NewsFragment : Fragment() {
         val context = requireContext()
 
 //        Retrofit
-        val retrofit = MyRetrofit().getRetrofit()
-        val api = retrofit.create(RetrofitServieces::class.java)
-        val call: Call<MutableList<DataMovie>> = api.getData()
-        call.enqueue(object: retrofit2.Callback<MutableList<DataMovie>>, NewsAdapterEvents {
+        val retrofit = MyRetrofit().getNews()
+        val api = retrofit.create(RetrofitFunctions::class.java)
+        val call = api.getData()
+        call.enqueue(object: retrofit2.Callback<List<DataMovie>>, NewsAdapterEvents {
             override fun onResponse(
-                call: Call<MutableList<DataMovie>>,
-                response: Response<MutableList<DataMovie>>
+                call: Call<List<DataMovie>>,
+                response: Response<List<DataMovie>>
             ) {
-                binding.recyclerNews.adapter = NewsAdapter(context, response.body() as MutableList<DataMovie>, this)
+                binding.recyclerNews.adapter = NewsAdapter(context, response.body() as List<DataMovie>, this)
             }
 
-            override fun onFailure(call: Call<MutableList<DataMovie>>, t: Throwable) {
+            override fun onFailure(call: Call<List<DataMovie>>, t: Throwable) {
                 Toast.makeText(context, t.localizedMessage, Toast.LENGTH_SHORT)
                     .show()
             }

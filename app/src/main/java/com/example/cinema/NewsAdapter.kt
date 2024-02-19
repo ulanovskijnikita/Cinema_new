@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.cinema.retrofit.model.DataMovie
 
 class NewsAdapter(val context: Context,
-                  private val list: MutableList<DataMovie>,
+                  private val list: List<DataMovie>,
                   private val listener: NewsAdapterEvents
 ): RecyclerView.Adapter<NewsAdapter.Link>() {
     inner class Link(item: View): RecyclerView.ViewHolder(item), View.OnClickListener {

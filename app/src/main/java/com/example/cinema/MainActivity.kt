@@ -6,13 +6,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
+import com.example.cinema.databinding.ActivityMainBinding
+import com.example.cinema.databinding.ActivityMainContentBinding
+import com.example.cinema.retrofit.MyRetrofit
+import com.example.cinema.retrofit.`interface`.RetrofitFunctions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private var pref: SharedPreferences? = null
 
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         pref = getSharedPreferences(Const.userTable, MODE_PRIVATE)
 

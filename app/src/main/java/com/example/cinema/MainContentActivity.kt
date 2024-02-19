@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.WindowCompat
-import androidx.fragment.app.FragmentManager
 import com.example.cinema.databinding.ActivityMainContentBinding
 
 class MainContentActivity : AppCompatActivity() {

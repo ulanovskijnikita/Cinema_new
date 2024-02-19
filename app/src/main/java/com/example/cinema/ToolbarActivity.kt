@@ -17,13 +17,13 @@ class ToolbarActivity : AppCompatActivity() {
     private lateinit var binding: ActivityToolbarBinding
 
     fun backToMainActivity4() {
-        val intent= Intent(this, TestActivity::class.java)
+        val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
 
     fun backToFilms() {
-        val intent= Intent(this, FilmsActivity::class.java)
+        val intent= Intent(this, MainContentActivity::class.java)
         startActivity(intent)
         finish()
     }

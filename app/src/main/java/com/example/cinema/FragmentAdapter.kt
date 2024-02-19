@@ -14,12 +14,12 @@ class FragmentAdapter(val con: Context, val list: List<FragmentData>): RecyclerV
         val fragment_text: TextView = itemView.findViewById(R.id.recycler_fragment_films_text)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FragmentAdapter.Link {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):Link {
         val root = LayoutInflater.from(con).inflate(R.layout.recycler_fragment_films, parent, false)
         return Link(root)
     }
 
-    override fun onBindViewHolder(holder: FragmentAdapter.Link, position: Int) {
+    override fun onBindViewHolder(holder:Link, position: Int) {
         holder.fragment_img.setImageResource(list[position].img_frament)
         holder.fragment_text.setText(list[position].text_frament)
     }

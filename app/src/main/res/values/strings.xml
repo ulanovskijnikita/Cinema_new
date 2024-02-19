@@ -6,4 +6,6 @@
     <!--  Мои строки  -->
     <string name="statistics">Статистика</string>
     <string name="go_watch">Продолжить смотреть</string>
+    <string name="books_title">Заслуженные книги</string>
+    <string name="books_subtitle">А вы знали, что многих фильмов не было бы без книг?</string>
 </resources>

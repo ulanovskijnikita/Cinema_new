@@ -6,7 +6,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.example.cinema.databinding.ActivityNewsBinding
 import com.example.cinema.retrofit.MyRetrofit
-import com.example.cinema.retrofit.`interface`.RetrofitServieces
+import com.example.cinema.retrofit.`interface`.RetrofitFunctions
 import com.example.cinema.retrofit.model.DataMovie
 import retrofit2.Call
 import retrofit2.Response
@@ -19,15 +19,16 @@ class NewsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //        Retrofit
-        val retrofit = MyRetrofit().getRetrofit()
-        val api = retrofit.create(RetrofitServieces::class.java)
-        val call: Call<MutableList<DataMovie>> = api.getData()
-        call.enqueue(object: retrofit2.Callback<MutableList<DataMovie>> {
+        val retrofit = MyRetrofit().getNews()
+        val api = retrofit.create(RetrofitFunctions::class.java)
+        val call= api.getData()
+        call.enqueue(object: retrofit2.Callback<List<DataMovie>> {
+
             override fun onResponse(
-                call: Call<MutableList<DataMovie>>,
-                response: Response<MutableList<DataMovie>>
+                call: Call<List<DataMovie>>,
+                response: Response<List<DataMovie>>
             ) {
-                val list = response.body() as MutableList<DataMovie>
+                val list = response.body() as List<DataMovie>
                 val position = intent.getIntExtra(Const.news, 0)
 
                 binding.apply {
@@ -41,10 +42,9 @@ class NewsActivity : AppCompatActivity() {
                     createdby.text = "Создатель: " + list[position].createdby
                     publisher.text = "Первая публикация: " + list[position].publisher
                 }
-
             }
 
-            override fun onFailure(call: Call<MutableList<DataMovie>>, t: Throwable) {
+            override fun onFailure(call: Call<List<DataMovie>>, t: Throwable) {
                 Toast.makeText(this@NewsActivity, t.localizedMessage, Toast.LENGTH_SHORT)
                     .show()
             }

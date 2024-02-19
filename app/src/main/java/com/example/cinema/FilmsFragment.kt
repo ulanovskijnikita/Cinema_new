@@ -18,6 +18,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FilmsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class FilmsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -46,8 +47,8 @@ class FilmsFragment : Fragment() {
         super.onStart()
 
 //        ViewPager2
-        val fragList = listOf(FilmsFragment1(), FilmsFragment2(), FilmsFragment3())
-        val tabList = listOf("В тренде", "Новинки", "Для Вас")
+        val fragList = listOf(FilmsFragment1(), FilmsFragment2(), FilmsFragment3(), BooksFragment().bookInstance(Bundle = ))
+        val tabList = listOf("В тренде", "Новинки", "Для Вас", "Книги в кино")
 
         val adapter = FilmsFragments(this, fragList)
         binding.fragmentHolder.adapter = adapter
